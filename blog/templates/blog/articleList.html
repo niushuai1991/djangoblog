@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>博客列表</title>
+</head>
+<body>
+<h1>文章列表</h1>
+{% for article in articles %}
+<a href="article.html" >{{ article.name }}</a>
+{% endfor %}
+</body>
+</html>
