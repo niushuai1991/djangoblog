@@ -21,9 +21,9 @@ def article_json(request):
 	article = models.Article.objects.get(id=1)
 	return HttpResponse(article.toJSON(), content_type='application/json; charset=utf-8')
 
-def article(request):
+def article(request, article_id):
 	''' 渲染model '''
-	article = models.Article.objects.get(id=1)
+	article = models.Article.objects.get(id=article_id)
 	return render(request, 'blog/article.html', {'article': article})
 
 def articleAll(request):

@@ -22,6 +22,6 @@ urlpatterns = [
     url(r'^index/', views.index),
     url(r'^hello/', views.hello),
     url(r'^json/', views.json_data),
-    url(r'^article/', views.article),
-    url(r'^articleList/', views.articleAll)
+    url(r'^articleList/', views.articleAll),
+    url(r'article/(?P<article_id>[0-9]+)', views.article),
 ]
