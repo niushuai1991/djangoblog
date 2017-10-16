@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^hello/', views.hello),
     url(r'^json/', views.json_data),
     url(r'^articleList/', views.articleAll),
-    url(r'article/(?P<article_id>[0-9]+)', views.article),
+    url(r'article/(?P<article_id>[0-9]+)', views.article, name='article_page'),
 ]

@@ -6,7 +6,7 @@
 <body>
 <h1>文章列表</h1>
 {% for article in articles %}
-<a href="article.html" >{{ article.name }}</a>
+<a href="{% url 'article_page' article.id %}" >{{ article.name }}</a>
 {% endfor %}
 </body>
 </html>
