@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>文章编辑页</title>
+</head>
+<body>
+{% if article %}
+<h1>新建文章</h1>
+{% else %}
+<h1>修改文章</h1>
+{% endif %}
+<form action="{% url 'edit_action' %}" method="post">
+	{% csrf_token %}
+	<input type="hidden" name="article_id" value="{% if article %}{{ article.id }}{% endif %}" />
+	<label>标题：</label>
+	<input type="text" name="title" value="{% if article %}{{ article.title }}{% endif %}" />
+	<br/>
+	<label>内容：</label>
+	<input type="text" name="content" value="{% if article %}{{ article.content }}{% endif %}" />
+	<br/>
+	<input type="submit"/>
+</form>
+
+</body>
+</html>

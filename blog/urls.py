@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'^index/', views.index),
     url(r'^hello/', views.hello),
     url(r'^json/', views.json_data),
-    url(r'^articleList/', views.articleAll),
-    url(r'article/(?P<article_id>[0-9]+)', views.article, name='article_page'),
+    url(r'^articleList/', views.article_list),
+    url(r'article/(?P<article_id>[0-9]+)$', views.article, name='article_page'),
+    url(r'^edit/(?P<article_id>[0-9]+)$', views.edit, name="edit"),
+    url(r'^edit/action/', views.edit_action, name='edit_action'),
 ]
